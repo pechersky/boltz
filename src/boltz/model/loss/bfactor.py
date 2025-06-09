@@ -21,7 +21,7 @@ def bfactor_loss_fn(
         The globally averaged loss.
 
     """
-    with torch.autocast("cuda", enabled=False):
+    with torch.autocast("cuda"):
         # Get predicted distograms
         pred = output["pbfactor"].float()  # (B, L, bins)
         bins = pred.shape[2]  # num_bins

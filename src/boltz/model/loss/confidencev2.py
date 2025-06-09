@@ -95,7 +95,7 @@ def resolved_loss(
     multiplicity=1,
     mask_loss=None,
 ):
-    with torch.autocast("cuda", enabled=False):
+    with torch.autocast("cuda"):
         if token_level_confidence:
             token_to_rep_atom = feats["token_to_rep_atom"]
             token_to_rep_atom = token_to_rep_atom.repeat_interleave(
